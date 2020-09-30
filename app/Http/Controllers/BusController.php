@@ -12,9 +12,16 @@ class BusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function busLocationById(Request $request)
     {
-        //
+        if(Bus::where('id', $request->bus_id)->exists()){
+            $bus = Bus::where('id', $request->bus_id)->first();
+            $status = true;
+            return response()->json(['status' => $status, 'message' => 'Bus found', 'data' => $bus]);
+        }
+
+        $status = false;
+        return response()->json(['status' => $status, 'message' => 'Bus not found']);
     }
 
     /**
@@ -35,7 +42,19 @@ class BusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Bus::where('id', $request->bus_id)->exists()){
+            $bus = Bus::find($request->bus_id);
+
+            $bus->lat = $request->get('lat');
+            $bus->long = $request->get('long');
+
+            $bus->save();
+            $status = true;
+            return response()->json(['status' => $status, 'message' => 'Bus location updated successfully', 'data' => $bus]);
+        }
+
+        $status = false;
+        return response()->json(['status' => $status, 'message' => 'Bus not found']);
     }
 
     /**

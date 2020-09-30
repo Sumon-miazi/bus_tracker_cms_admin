@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/driverSignIn','App\Http\Controllers\DriverController@signIn');
+Route::post('/userFeedbackAboutBusToServer','App\Http\Controllers\BusController@store');
+Route::post('/getBusCurrentPositionByBusId','App\Http\Controllers\BusController@busLocationById');

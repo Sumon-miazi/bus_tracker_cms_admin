@@ -18,6 +18,8 @@ class CreateBusesTable extends Migration
             $table->string('name');
             $table->string('license');
             $table->string('routes');
+            $table->decimal('lat', 10, 7)->default(0.0);
+            $table->decimal('long', 10, 7)->default(0.0);
             $table->timestamps();
         });
     }
