@@ -12,6 +12,24 @@ class BusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getAllBuses()
+    {
+        $buses = Bus::all();
+
+        foreach ($buses as $bus){
+            //echo $bus->busStop;
+            foreach ($bus->busStoppages as $stoppage) {
+              //  echo  $stoppage;
+            }
+            
+        }
+
+        $status = true;
+        return response()->json(['status' => $status, 'message' => 'Bus found', 'data' => $buses]);
+    }
+
+
     public function busLocationById(Request $request)
     {
         if(Bus::where('id', $request->bus_id)->exists()){

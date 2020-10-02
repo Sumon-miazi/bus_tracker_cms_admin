@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Bus extends Model
 {
     use HasFactory;
+
+    public function busStoppages()
+    {
+        return $this->belongsToMany('App\Models\Stoppage','bus_stoppages');
+    }
 }

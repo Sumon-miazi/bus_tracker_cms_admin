@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BusStop;
+use App\Models\BusStoppage;
 use Illuminate\Http\Request;
 
-class BusStopController extends Controller
+class BusStoppageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BusStopController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BusStop  $busStop
+     * @param  \App\Models\BusStoppage  $busStoppage
      * @return \Illuminate\Http\Response
      */
-    public function show(BusStop $busStop)
+    public function show(BusStoppage $busStoppage)
     {
         //
     }
@@ -52,10 +52,10 @@ class BusStopController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BusStop  $busStop
+     * @param  \App\Models\BusStoppage  $busStoppage
      * @return \Illuminate\Http\Response
      */
-    public function edit(BusStop $busStop)
+    public function edit(BusStoppage $busStoppage)
     {
         //
     }
@@ -64,10 +64,10 @@ class BusStopController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BusStop  $busStop
+     * @param  \App\Models\BusStoppage  $busStoppage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BusStop $busStop)
+    public function update(Request $request, BusStoppage $busStoppage)
     {
         //
     }
@@ -75,10 +75,10 @@ class BusStopController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BusStop  $busStop
+     * @param  \App\Models\BusStoppage  $busStoppage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BusStop $busStop)
+    public function destroy(BusStoppage $busStoppage)
     {
         //
     }
