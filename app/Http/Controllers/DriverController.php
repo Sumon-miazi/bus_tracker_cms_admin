@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Driver;
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
@@ -17,6 +18,9 @@ class DriverController extends Controller
 //return $request->password;
         if(Driver::where('email', $request->email)->exists()){
             $driver = Driver::where('email', $request->email)->first();
+            $bus = Bus::find($driver->bus_id);
+
+            $driver->bus_name = $bus->name;
             //return $driver;
             if($driver->password == $request->password){
                 $status = true;
